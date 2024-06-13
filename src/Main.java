@@ -87,8 +87,21 @@ public class Main {
             if ((i - monthFirstFriday) % 7 == 0) {
                 System.out.println("Сегодня пятница, " + i + "-е число. Необходимо подготовить отчет.");
             }
-
         }
+
+// 8.
+        System.out.println("\n8.");
+        int year = 2024;
+        int yearBelow200 = year - 200;
+        int yearUp100 = year + 100;
+        int period = 79;
+        for (i = yearBelow200; i <= yearUp100; i++) {
+            if (i % period == 0) {
+                System.out.println(i);
+            }
+        }
+
+
 
     }
 }
