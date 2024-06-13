@@ -21,5 +21,17 @@ public class Main {
             System.out.print(i + " ");
         }
 
+        System.out.println("\n");
+        System.out.println("3.");
+        int populationY = 12000000;
+        int birthRate = 17, birth;
+        int mortalityRate = 8, died;
+        for (i = 1; i <= 10; i++) {
+            died = populationY * mortalityRate / 1000;
+            birth = populationY * birthRate / 1000;
+            populationY = populationY + birth - died;
+            System.out.printf("Год %d, численность населения составляет %d\n", i, populationY);
+        }
+
     }
 }
