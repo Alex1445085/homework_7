@@ -33,5 +33,15 @@ public class Main {
             System.out.printf("Год %d, численность населения составляет %d\n", i, populationY);
         }
 
+        System.out.println();
+        System.out.println("4.");
+        double depositInBank = 15000;
+        i = 0;
+        while (depositInBank < 12000000) {
+            i++;
+            depositInBank = depositInBank + depositInBank * 7 / 100;
+            System.out.printf("После %d месяца вклад вырос до %.2f руб\n", i, depositInBank);
+        }
+
     }
 }
