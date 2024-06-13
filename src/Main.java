@@ -43,5 +43,18 @@ public class Main {
             System.out.printf("После %d месяца вклад вырос до %.2f руб\n", i, depositInBank);
         }
 
+        System.out.println();
+        System.out.println("5.");
+        depositInBank = 15000;
+        i = 0;
+        while (depositInBank < 12000000) {
+            i++;
+            depositInBank = depositInBank + depositInBank * 7 / 100;
+            if (i % 6 == 0) {
+                System.out.printf("После %d месяца вклад вырос до %.2f руб\n", i, depositInBank);
+            }
+        }
+        System.out.printf("После %d месяца вклад наконец то превысил 12 000 000 и составил %.2f р\n", i, depositInBank);
+
     }
 }
