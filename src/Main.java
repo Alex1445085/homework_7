@@ -1,14 +1,25 @@
 public class Main {
     public static void main(String[] args) {
 
-// 1.
-        System.out.println("1.");
+// 1.   v1
+        System.out.println("\n1.");
+        int purposeForDeposit = 2459000;
+        int contribution = 15000;
         int deposit = 0, month = 0;
-        while (deposit <= 2459000) {
-            deposit = deposit + 15000;
+        while (deposit <= purposeForDeposit) {
+            deposit = deposit + contribution;
             month++;
             System.out.printf("Месяц %d, сумма накоплений равна %d\n", month, deposit);
         }
+        System.out.println();
+//      v2
+        deposit = 0;
+        month = 0;
+        while (deposit <= purposeForDeposit) {
+            deposit = deposit + contribution;
+            month++;
+        }
+        System.out.printf("Месяц %d, сумма накоплений равна %d\n", month, deposit);
         System.out.println();
 
 // 2.
@@ -40,50 +51,51 @@ public class Main {
 // 4.
         System.out.println();
         System.out.println("4.");
-        double depositInBank = 15000;
-        i = 0;
-        while (depositInBank < 12000000) {
-            i++;
-            depositInBank = depositInBank + depositInBank * 7 / 100;
-            System.out.printf("После %d месяца вклад вырос до %.2f руб\n", i, depositInBank);
+        double depositInBank = contribution;
+        int monthPercent = 7, targetAccumulation = 12000000;
+        month = 0;
+        while (depositInBank < targetAccumulation) {
+            month++;
+            depositInBank = depositInBank + depositInBank * monthPercent / 100;
+            System.out.printf("После %d месяца вклад вырос до %.2f руб\n", month, depositInBank);
         }
 
 // 5.
         System.out.println();
         System.out.println("5.");
-        depositInBank = 15000;
-        i = 0;
-        while (depositInBank < 12000000) {
-            i++;
-            depositInBank = depositInBank + depositInBank * 7 / 100;
-            if (i % 6 == 0) {
-                System.out.printf("После %d месяца вклад вырос до %.2f руб\n", i, depositInBank);
+        int reportingPeriod = 6;
+        depositInBank = contribution;
+        month = 0;
+        while (depositInBank < targetAccumulation) {
+            month++;
+            depositInBank = depositInBank + depositInBank * monthPercent / 100;
+            if (month % reportingPeriod == 0) {
+                System.out.printf("После %d месяца вклад вырос до %.2f руб\n", month, depositInBank);
             }
         }
-        System.out.printf("После %d месяца вклад наконец то превысил 12 000 000 и составил %.2f р\n", i, depositInBank);
+        System.out.printf("После %d месяца вклад наконец то превысил 12 000 000 и составил %.2f р\n", month, depositInBank);
 
 // 6.
         System.out.println();
         System.out.println("6.");
-        depositInBank = 15000;
-        int monthPercent = 7;
+        depositInBank = contribution;
         int depositYear = 12 * 9;
-        for (i = 1; i <= depositYear; i++) {
+        for (month = 1; month <= depositYear; month++) {
             depositInBank = depositInBank + depositInBank * monthPercent / 100;
-            if (i % 6 == 0) {
-                System.out.printf("После %d месяца накопления составляют %.2fр.\n", i, depositInBank);
+            if (month % reportingPeriod == 0) {
+                System.out.printf("После %d месяца накопления составляют %.2fр.\n", month, depositInBank);
             }
         }
 
 // 7.
         System.out.println("\n7.");
-        int monthFirstFriday = 2;
-        for (i = monthFirstFriday; i <= 31; i = i + 7) {
+        int monthFirstFriday = 2, dayInMonth = 31;
+        for (i = monthFirstFriday; i <= dayInMonth; i = i + 7) {
             System.out.println("Сегодня пятница, " + i + "-е число. Необходимо подготовить отчет.");
         }
         // v2
         System.out.println();
-        for (i = monthFirstFriday; i <= 31; i++) {
+        for (i = monthFirstFriday; i <= dayInMonth; i++) {
             if ((i - monthFirstFriday) % 7 == 0) {
                 System.out.println("Сегодня пятница, " + i + "-е число. Необходимо подготовить отчет.");
             }
