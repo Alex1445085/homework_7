@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 
-// 1.   v1
+// 1.
         System.out.println("\n1.");
         int purposeForDeposit = 2459000;
         int contribution = 15000;
@@ -11,15 +11,6 @@ public class Main {
             month++;
             System.out.printf("Месяц %d, сумма накоплений равна %d\n", month, deposit);
         }
-        System.out.println();
-//      v2
-        deposit = 0;
-        month = 0;
-        while (deposit <= purposeForDeposit) {
-            deposit += contribution;
-            month++;
-        }
-        System.out.printf("Месяц %d, сумма накоплений равна %d\n", month, deposit);
         System.out.println();
 
 // 2.
