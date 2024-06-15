@@ -7,7 +7,7 @@ public class Main {
         int contribution = 15000;
         int deposit = 0, month = 0;
         while (deposit <= purposeForDeposit) {
-            deposit = deposit + contribution;
+            deposit += contribution;
             month++;
             System.out.printf("Месяц %d, сумма накоплений равна %d\n", month, deposit);
         }
@@ -16,7 +16,7 @@ public class Main {
         deposit = 0;
         month = 0;
         while (deposit <= purposeForDeposit) {
-            deposit = deposit + contribution;
+            deposit += contribution;
             month++;
         }
         System.out.printf("Месяц %d, сумма накоплений равна %d\n", month, deposit);
@@ -43,7 +43,7 @@ public class Main {
         for (i = 1; i <= 10; i++) {
             died = populationY * mortalityRate / 1000;
             birth = populationY * birthRate / 1000;
-            populationY = populationY + birth - died;
+            populationY += birth - died;
             System.out.printf("Год %d, численность населения составляет %d\n", i, populationY);
         }
 
@@ -56,7 +56,7 @@ public class Main {
         month = 0;
         while (depositInBank < targetAccumulation) {
             month++;
-            depositInBank = depositInBank + depositInBank * monthPercent / 100;
+            depositInBank = percentage(depositInBank, monthPercent);
             System.out.printf("После %d месяца вклад вырос до %.2f руб\n", month, depositInBank);
         }
 
@@ -68,7 +68,7 @@ public class Main {
         month = 0;
         while (depositInBank < targetAccumulation) {
             month++;
-            depositInBank = depositInBank + depositInBank * monthPercent / 100;
+            depositInBank = percentage(depositInBank, monthPercent);
             if (month % reportingPeriod == 0) {
                 System.out.printf("После %d месяца вклад вырос до %.2f руб\n", month, depositInBank);
             }
@@ -81,7 +81,7 @@ public class Main {
         depositInBank = contribution;
         int depositYear = 12 * 9;
         for (month = 1; month <= depositYear; month++) {
-            depositInBank = depositInBank + depositInBank * monthPercent / 100;
+            depositInBank =  percentage(depositInBank, monthPercent);
             if (month % reportingPeriod == 0) {
                 System.out.printf("После %d месяца накопления составляют %.2fр.\n", month, depositInBank);
             }
@@ -112,8 +112,9 @@ public class Main {
                 System.out.println(i);
             }
         }
+    }
 
-
-
+    private static double percentage(double depositInBank, int monthPercent) {
+        return depositInBank * (100 + monthPercent) / 100;
     }
 }
