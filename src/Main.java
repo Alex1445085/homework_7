@@ -5,7 +5,8 @@ public class Main {
         System.out.println("\n1.");
         int purposeForDeposit = 2459000;
         int contribution = 15000;
-        int deposit = 0, month = 0;
+        int deposit = 0;
+        int month = 0;
         while (deposit <= purposeForDeposit) {
             deposit += contribution;
             month++;
