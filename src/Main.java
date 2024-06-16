@@ -9,7 +9,7 @@ public class Main {
         while (deposit <= purposeForDeposit) {
             deposit += contribution;
             month++;
-            System.out.printf("Месяц %d, сумма накоплений равна %d\n рулей", month, deposit);
+            System.out.printf("Месяц %d, сумма накоплений равна %d рублей\n", month, deposit);
         }
         System.out.println();
 
